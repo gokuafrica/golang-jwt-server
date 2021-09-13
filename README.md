@@ -38,7 +38,6 @@ import (
 	"log"
 	"net/http"
 	"os"
-	"time"
 
 	"github.com/gokuafrica/golang-jwt-server/config"
 	"github.com/gokuafrica/golang-jwt-server/context"
@@ -67,14 +66,7 @@ func main() {
 
 	// an authenticated request
 	authenticated := func(rw http.ResponseWriter, r *http.Request) {
-		cookie := &http.Cookie{
-			Name:     "name",
-			Value:    "lol",
-			HttpOnly: true,
-			Expires:  time.Unix(0, 0),
-		}
-		http.SetCookie(rw, cookie)
-		fmt.Fprintln(rw, "Checking cookie existence")
+		fmt.Fprintln(rw, "Just an authenticated request")
 	}
 
 	// get new jwt from refresh token handler
