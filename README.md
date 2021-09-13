@@ -50,7 +50,8 @@ func main() {
 	// login handler
 	login := func(rw http.ResponseWriter, r *http.Request) {
 		/*
-			Login validation logic. For eg: take email and password and verify in database.
+			Login validation logic. 
+            For eg: take email and password and verify in database.
 		*/
 		log := context.GetLogger(r)
 		server := context.GetServer(r)
